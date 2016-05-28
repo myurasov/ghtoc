@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/Formatter'
+
+# read args
+
+input = ARGV[0]
+
+if input.nil?
+  # no argument supplied
+  puts "Usage #{__FILE__} <filename>"
+  exit 1
+elsif !File.exist?(input)
+  # file not found
+  puts "File \"#{input}\" not found"
+  exit 2
+end
